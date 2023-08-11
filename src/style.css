@@ -29,6 +29,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #e6fffd;
 }
 
 h1 {
@@ -94,4 +95,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.grid-item {
+  background-color: #aee2ff;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 8px;
 }
