@@ -1,3 +1,6 @@
+import { generarTablero, mapearDivCartas } from "./ui"
+import { Tablero} from "./modelo"
+
 /*
 En el motor nos va a hacer falta un método para barajar cartas
 */
@@ -49,5 +52,10 @@ const barajarCartas = (cartas : Carta[]): Carta[] => {
   */
   
   export const iniciaPartida = (tablero: Tablero): void => {
-    //...
+
+    const botonNuevaPartida = document.getElementById("iniciarPartidaButton")
+    
+    if (botonNuevaPartida) {
+        botonNuevaPartida.addEventListener("click", generarTablero);
+    }
   };

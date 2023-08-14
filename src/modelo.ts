@@ -54,12 +54,14 @@ export const crearCartaInicial = (idFoto: number, imagen: string): Carta => ({
 export const crearColeccionDeCartasInicial = (
   infoCartas: InfoCarta[]
 ): Carta[] => {
-  /* Aquí crearemos un array de cartas a partir de un array de infoCartas
-       y duplicaremos las cartas para que haya dos de cada tipo.
-    */
-  const newArr = infoCartas.concat(infoCartas);
-  console.log(newArr); // [1, 2, 3, 1, 2, 3]
+  const cartasTransformadas = infoCartas.map((carta) =>
+    crearCartaInicial(carta.idFoto, carta.imagen)
+  );
+
+  return [...cartasTransformadas, ...cartasTransformadas];
 };
+
+// console.log(crearColeccionDeCartasInicial(infoCartas));
 
 export let cartas: Carta[] = crearColeccionDeCartasInicial(infoCartas);
 
